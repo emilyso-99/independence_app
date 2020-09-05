@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
+}
+
+void callback() {
+  print('I am in the isolate');
 }
 
 class MyApp extends StatelessWidget {
