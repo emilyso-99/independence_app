@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:independence_app/speechtotext.dart';
 
 void main() {
   runApp(MyApp());
