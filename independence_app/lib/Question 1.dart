@@ -45,7 +45,10 @@ class MyStatelessWidget extends StatelessWidget {
           prompt1,
           style: TextStyle(fontSize: 30),
         ),
-        Text(prompt2),
+        Text(
+          prompt2,
+          style: TextStyle(fontSize: 30),
+        ),
         RaisedButton(
           onPressed: () {
             Navigator.push(context,
