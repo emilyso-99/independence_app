@@ -27,7 +27,6 @@ void callbackDispatcher() {
         switch (task) {
             case simplePeriodicTask:
                 print("$simplePeriodicTask was executed");
-                SystemChannels.platform.invokeMethod('SystemNavigator.pop');
                 break;
             case simplePeriodic1HourTask:
                 print("$simplePeriodic1HourTask was executed");
@@ -36,11 +35,9 @@ void callbackDispatcher() {
                 print("The iOS background fetch was triggered");
                 Directory tempDir = await getTemporaryDirectory();
                 String tempPath = tempDir.path;
-                print(
-                    "You can access other plugins in the background, for example Directory.getTemporaryDirectory(): $tempPath");
+                print("You can access other plugins in the background, for example Directory.getTemporaryDirectory(): $tempPath");
                 break;
         }
-
         return Future.value(true);
     });
 }
@@ -88,7 +85,7 @@ class _MyAppState extends State<MyApp> {
                             //Since we have not provided a frequency it will be the default 15 minutes
                             PlatformEnabledButton(
                                 platform: _Platform.android,
-                                child: Text("Register Periodic Task"),
+                                child: Text("Timer with 3 second delay and then set to every 15 minutes"),
                                 onPressed: () {
                                     Workmanager.registerPeriodicTask(
                                         "3",
@@ -100,7 +97,7 @@ class _MyAppState extends State<MyApp> {
                             //It will run about every hour
                             PlatformEnabledButton(
                                 platform: _Platform.android,
-                                child: Text("Register 1 hour Periodic Task"),
+                                child: Text("Timer set to every hour"),
                                 onPressed: () {
                                     Workmanager.registerPeriodicTask(
                                         "5",
