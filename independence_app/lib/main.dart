@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'Question 1.dart';
 import 'login.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
+}
+
+void callback() {
+  print('I am in the isolate');
 }
 
 class MyApp extends StatelessWidget {
