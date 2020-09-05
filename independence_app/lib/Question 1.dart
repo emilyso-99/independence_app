@@ -27,9 +27,11 @@ final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
 
-  String prompt1 = 'Hello, this is the Independence Application. I am going to ask you a couple of questions about your health.';
-  String prompt2 = "Please enter your Name and Medical ID Below so that your EHR can be retreived for today's session.";
-  
+  String prompt1 =
+      'Hello, this is the Independence Application. I am going to ask you a couple of questions about your health.';
+  String prompt2 =
+      "Please enter your Name and Medical ID Below so that your EHR can be retreived for today's session.";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,8 @@ class MyStatelessWidget extends StatelessWidget {
         actions: <Widget>[],
       ),
       body: Column(children: [
-        Text(prompt1,
+        Text(
+          prompt1,
           style: TextStyle(fontSize: 30),
         ),
         Text(prompt2),
@@ -50,7 +53,9 @@ class MyStatelessWidget extends StatelessWidget {
           },
           child: Text("LOGIN"),
         ),
-        TextToSpeech(text: prompt1 + prompt2,)
+        TextToSpeech(
+          text: prompt1 + prompt2,
+        )
       ]),
     );
   }
