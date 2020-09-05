@@ -82,6 +82,7 @@ class _MyAppState extends State<MyApp> {
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
+                            // ignore: deprecated_member_use
                             Text("Plugin initialization", style: Theme.of(context).textTheme.headline),
                             RaisedButton(
                                 child: Text("Start the Flutter background service"),
@@ -92,6 +93,7 @@ class _MyAppState extends State<MyApp> {
                                     );
                                 }),
                             SizedBox(height: 16),
+                            // ignore: deprecated_member_use
                             Text("One Off Tasks (Android only)", style: Theme.of(context).textTheme.headline),
                             //This task runs once.
                             //Most likely this will trigger immediately
@@ -124,6 +126,7 @@ class _MyAppState extends State<MyApp> {
                                     );
                                 }),
                             SizedBox(height: 8),
+                            // ignore: deprecated_member_use
                             Text("Periodic Tasks (Android only)", style: Theme.of(context).textTheme.headline),
                             //This task runs periodically
                             //It will wait at least 10 seconds before its first launch

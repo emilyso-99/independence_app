@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
         //================================================
         //start - added paths for the alarmmanager
         //================================================
@@ -15,6 +16,9 @@ buildscript {
         //================================================
         // end - added paths for the alarmmanager
         //================================================
+
+        classpath 'com.google.gms:google-services:4.3.3'
+
     }
 }
 
