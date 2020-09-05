@@ -37,7 +37,7 @@ class MyStatelessWidget extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'Are you currently hurt or experiencing new or worse pain?',
+          'Thank you for taking the time to answer our questions and have a great rest of your day!',
           style: TextStyle(fontSize: 30),
         ),
       ),

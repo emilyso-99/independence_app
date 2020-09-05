@@ -19,10 +19,9 @@ class _TextToSpeechState extends State<TextToSpeech> {
 
       await flutterTts.speak(widget.text);
     }
+    speak();
     return Container(
-      alignment: Alignment.center,
-      child: RaisedButton(child: Text(widget.text), onPressed: () => speak(),)
-      
+      alignment: Alignment.center,      
     );
   }
 }

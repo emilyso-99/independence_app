@@ -37,7 +37,7 @@ class MyStatelessWidget extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'Are you currently hurt or experiencing new or worse pain?',
+          'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?',
           style: TextStyle(fontSize: 30),
         ),
       ),

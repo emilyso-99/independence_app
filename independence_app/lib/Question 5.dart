@@ -37,7 +37,7 @@ class MyStatelessWidget extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          'Are you currently hurt or experiencing new or worse pain?',
+          'Can you tell me what year it is?',
           style: TextStyle(fontSize: 30),
         ),
       ),
