@@ -2,12 +2,14 @@ import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:highlight_text/highlight_text.dart';
+
 class SpeechToText extends StatefulWidget {
   @override
   _SpeechToTextState createState() => _SpeechToTextState();
 }
 
 class _SpeechToTextState extends State<SpeechToText> {
+  //We replace all these keywords with the right keywords
   final Map<String, HighlightedWord> _highlights = {
     'flutter': HighlightedWord(
       onTap: () => print('flutter'),
@@ -49,7 +51,6 @@ class _SpeechToTextState extends State<SpeechToText> {
   stt.SpeechToText _speech;
   bool _isListening = false;
   String _text = 'Press the button and start speaking';
-  double _confidence = 1.0;
 
   @override
   void initState() {
@@ -59,9 +60,10 @@ class _SpeechToTextState extends State<SpeechToText> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      home: new Scaffold(
       appBar: AppBar(
-        title: Text('Confidence: ${(_confidence * 100.0).toStringAsFixed(1)}%'),
+        title: Text('Speech to Text'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
@@ -91,6 +93,7 @@ class _SpeechToTextState extends State<SpeechToText> {
           ),
         ),
       ),
+    )
     );
   }
 
@@ -105,9 +108,6 @@ class _SpeechToTextState extends State<SpeechToText> {
         _speech.listen(
           onResult: (val) => setState(() {
             _text = val.recognizedWords;
-            if (val.hasConfidenceRating && val.confidence > 0) {
-              _confidence = val.confidence;
-            }
           }),
         );
       }
