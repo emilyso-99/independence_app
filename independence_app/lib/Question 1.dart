@@ -31,7 +31,7 @@ class MyStatelessWidget extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text('Welcome to Independence'),
+        title: const Text('Welcome to Independence!'),
         actions: <Widget>[],
       ),
       body: Column(children: [

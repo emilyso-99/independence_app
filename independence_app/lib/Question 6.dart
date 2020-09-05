@@ -32,12 +32,12 @@ class MyStatelessWidget extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text('Please answer the following question:'),
+        title: const Text('Welcome to Independence'),
         actions: <Widget>[],
       ),
       body: const Center(
         child: Text(
-          'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?',
+          'Can you tell me where you are currently?',
           style: TextStyle(fontSize: 30),
         ),
       ),

@@ -32,7 +32,7 @@ class MyStatelessWidget extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text('Welcome to Independence'),
+        title: const Text('Please answer the following question:'),
         actions: <Widget>[],
       ),
       body: const Center(
