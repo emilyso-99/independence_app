@@ -4,11 +4,10 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
-
-void main() => runApp(MyApp());
+import 'login.dart';
 
 /// This Widget is the main application widget.
-class MyApp extends StatelessWidget {
+class QuestionOne extends StatelessWidget {
   static const String _title = 'Flutter Code Sample';
 
   @override
@@ -35,12 +34,21 @@ class MyStatelessWidget extends StatelessWidget {
         title: const Text('Welcome to Independence'),
         actions: <Widget>[],
       ),
-      body: const Center(
-        child: Text(
+      body: Column(children: [
+        Text(
           'Hello, this is the Independence Application. I am going to ask you a couple of questions about your health.',
           style: TextStyle(fontSize: 30),
         ),
-      ),
+        Text(
+            "Please enter your Name and Medical ID Below so that your EHR can be retreived for today's session."),
+        RaisedButton(
+          onPressed: () {
+            Navigator.push(context,
+                new MaterialPageRoute(builder: (context) => new LoginScreen()));
+          },
+          child: Text("LOGIN"),
+        )
+      ]),
     );
   }
 }
