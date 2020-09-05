@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:independence_app/Question%202.dart';
 
 const users = const {
   'dribbble@gmail.com': '12345',
@@ -38,8 +39,12 @@ class LoginScreen extends StatelessWidget {
     return FlutterLogin(
       title: 'INDEPENDENCE',
       logo: 'assets/images/ecorp-lightblue.png',
-      onLogin: _authUser,
-      onSignup: _authUser,
+      // onLogin: _authUser
+      onLogin: (_) => Navigator.push(
+          context, MaterialPageRoute(builder: (context) => QuestionTwo())),
+      // onSignup: _authUser,
+      onSignup: (_) => Navigator.push(
+          context, MaterialPageRoute(builder: (context) => QuestionTwo())),
       onSubmitAnimationCompleted: () {},
       onRecoverPassword: _recoverPassword,
       messages: LoginMessages(usernameHint: "NAME", passwordHint: "MedID"),
