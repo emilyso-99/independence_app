@@ -37,17 +37,20 @@ class MyStatelessWidget extends StatelessWidget {
         title: const Text('Please answer the following question:'),
         actions: <Widget>[],
       ),
-      body: new Center(
-        child: new Column(
-          children: [Text(prompt,
-          style: TextStyle(fontSize: 30),
-          ), 
-          TextToSpeech(text:
-            prompt, listener: true,
-            )
-          ]
+      body: new Container(
+        padding: EdgeInsets.all(10),
+        child: new Center(
+          child: new Column(
+            children: [Text(prompt,
+            style: TextStyle(fontSize: 30),
+            ), 
+            TextToSpeech(text:
+              prompt, listener: true,
+              )
+            ]
+          ),
         ),
-      ),
+      )
     );
   }
 }

@@ -35,12 +35,15 @@ class MyStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       key: scaffoldKey,
       appBar: AppBar(
         title: const Text('Welcome to Independence!'),
         actions: <Widget>[],
       ),
-      body: Column(children: [
+      body: Container(
+        padding: EdgeInsets.all(10),
+        child: Column(children: [
         Text(
           prompt1,
           style: TextStyle(fontSize: 30),
@@ -49,6 +52,7 @@ class MyStatelessWidget extends StatelessWidget {
           prompt2,
           style: TextStyle(fontSize: 30),
         ),
+        Padding(padding: EdgeInsets.all(20)),
         RaisedButton(
           onPressed: () {
             Navigator.push(context,
@@ -60,6 +64,7 @@ class MyStatelessWidget extends StatelessWidget {
           text: prompt1 + "..." + prompt2, listener: false
         ),
       ]),
+    )
     );
   }
 }

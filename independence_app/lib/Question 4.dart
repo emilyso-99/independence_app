@@ -41,17 +41,19 @@ class MyStatelessWidget extends StatelessWidget {
       ),
       body: 
       new Center(
-        child: new Column(
-          children: [Text(prompt,
-          style: TextStyle(fontSize: 30),
-          ), 
-          TextToSpeech(text:
-            prompt, listener: true,
-            )
-          ]
-        ),
+        child: new Container(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: [Text(prompt,
+            style: TextStyle(fontSize: 30),
+            ), 
+            TextToSpeech(text:
+              prompt, listener: true,
+              )
+            ]
+          ),
+        )
       )
-
     );
   }
 }

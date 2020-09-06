@@ -4,7 +4,6 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
-import 'package:independence_app/speechtotext.dart';
 import 'package:independence_app/texttospeech.dart';
 
 /// This Widget is the main application widget.
@@ -38,17 +37,20 @@ class MyStatelessWidget extends StatelessWidget {
         title: const Text('Welcome to Independence'),
         actions: <Widget>[],
       ),
-      body: new Center(
-        child: new Column(
-          children: [Text("Are you currently hurt or experiencing new or worse pain?",
-          style: TextStyle(fontSize: 30),
-          ), 
-          TextToSpeech(text:
-            prompt, listener: true
-            ),
-          ]
-        ),
+      body: Column(
+        children:[
+          Container(
+            padding: EdgeInsets.fromLTRB(12, 12, 12, 12)),
+            Text(prompt, textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 30),
+          ),
+          Padding(padding: EdgeInsets.all(20)),
+          Container(
+            padding: EdgeInsets.all(12),
+            child: TextToSpeech(text: prompt, listener: true)
+          )
+        ]
       )
-     );
+    );
   }
 }
