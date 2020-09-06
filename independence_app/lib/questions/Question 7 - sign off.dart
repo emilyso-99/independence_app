@@ -41,24 +41,25 @@ class QuestionSeven extends StatelessWidget {
           title: const Text('Please answer the following question:'),
           actions: <Widget>[],
         ),
-        body: new Center(
-            child: new Stack(children: [
-          new Column(children: [
-            Text(
-              prompt,
-              style: GoogleFonts.oswald(
-                  textStyle: TextStyle(
-                      color: Colors.black, letterSpacing: .5, fontSize: 30)),
-            ),
-            TextToSpeech(
-              text: prompt,
-              listener: true,
-            )
-          ]),
+        body: new Stack(children: [
+          new Center(
+            child: new Column(children: [
+              Text(
+                prompt,
+                style: GoogleFonts.oswald(
+                    textStyle: TextStyle(
+                        color: Colors.black, letterSpacing: .5, fontSize: 30)),
+              ),
+              TextToSpeech(
+                text: prompt,
+                listener: true,
+              )
+            ]),
+          ),
           GestureDetector(onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => FinalScreen()));
           })
-        ])));
+        ]));
   }
 }
