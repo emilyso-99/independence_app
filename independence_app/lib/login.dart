@@ -32,8 +32,6 @@ class LoginScreen extends StatelessWidget {
         if (result.data["name"] == data.name) {
           GlobalData.medid = result.data["MedID"];
           GlobalData.username = result.data["name"];
-          Navigator.push(GlobalData.context,
-              MaterialPageRoute(builder: (context) => QuestionTwo()));
           print(result.data);
         } else {
           Firestore.instance.collection("patient_data").add({
@@ -42,13 +40,11 @@ class LoginScreen extends StatelessWidget {
           });
           GlobalData.username = data.name;
           GlobalData.medid = data.password;
-          Navigator.push(GlobalData.context,
-              MaterialPageRoute(builder: (context) => QuestionTwo()));
           print(result.data);
         }
-        return null;
       });
     });
+    return null;
   }
 
   Future<String> _recoverPassword(String name) {
@@ -63,7 +59,6 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    GlobalData.context = context;
     return FlutterLogin(
       title: 'INDEPENDENCE',
       logo: 'assets/images/ecorp-lightblue.png',
@@ -71,13 +66,15 @@ class LoginScreen extends StatelessWidget {
       // onLogin: (_) => Navigator.push(
       //     context, MaterialPageRoute(builder: (context) => QuestionTwo())),
       ,
-      onSignup: null,
+      onSignup: _authUser,
       // onSignup: (_) => Navigator.push(
       //     context, MaterialPageRoute(builder: (context) => QuestionTwo())),
-      onSubmitAnimationCompleted: () {},
+      onSubmitAnimationCompleted: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => QuestionTwo()));
+      },
       onRecoverPassword: _recoverPassword,
       messages: LoginMessages(usernameHint: "NAME", passwordHint: "MedID"),
-      emailValidator: null,
     );
   }
 }
