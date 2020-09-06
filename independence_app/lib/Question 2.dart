@@ -4,11 +4,11 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
-
-void main() => runApp(MyApp());
+import 'package:independence_app/speechtotext.dart';
+import 'package:independence_app/texttospeech.dart';
 
 /// This Widget is the main application widget.
-class MyApp extends StatelessWidget {
+class QuestionTwo extends StatelessWidget {
   static const String _title = 'Flutter Code Sample';
 
   @override
@@ -27,20 +27,28 @@ final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
 
+  String prompt = "Are you currently hurt or experiencing new or worse pain?";
+
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        title: const Text('Please answer the following question:'),
+        title: const Text('Welcome to Independence'),
         actions: <Widget>[],
       ),
-      body: const Center(
-        child: Text(
-          'Are you currently hurt or experiencing new or worse pain?',
+      body: new Center(
+        child: new Column(
+          children: [Text("Are you currently hurt or experiencing new or worse pain?",
           style: TextStyle(fontSize: 30),
+          ), 
+          TextToSpeech(text:
+            prompt, listener: true
+            ),
+          ]
         ),
-      ),
-    );
+      )
+     );
   }
 }

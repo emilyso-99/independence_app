@@ -4,6 +4,7 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
+import 'package:independence_app/texttospeech.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +27,7 @@ final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 /// This is the stateless widget that the main application instantiates.
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
-
+  String prompt = 'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +36,15 @@ class MyStatelessWidget extends StatelessWidget {
         title: const Text('Please answer the following question:'),
         actions: <Widget>[],
       ),
-      body: const Center(
-        child: Text(
-          'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?',
+      body: new Center(
+        child: new Column(
+          children: [Text(prompt,
           style: TextStyle(fontSize: 30),
+          ), 
+          TextToSpeech(text:
+            prompt, listener: true,
+            )
+          ]
         ),
       ),
     );

@@ -60,11 +60,11 @@ class _SpeechToTextState extends State<SpeechToText> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: new Scaffold(
-      appBar: AppBar(
-        title: Text('Speech to Text'),
-      ),
+    return Container(
+      height: MediaQuery.of(context).size.height / 2,
+      width: MediaQuery.of(context).size.width,
+      child: new Scaffold(
+        
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
         animate: _isListening,
@@ -79,14 +79,15 @@ class _SpeechToTextState extends State<SpeechToText> {
         ),
       ),
       body: SingleChildScrollView(
+        
         reverse: true,
         child: Container(
-          padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 150.0),
+          padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 50.0),
           child: TextHighlight(
             text: _text,
             words: _highlights,
             textStyle: const TextStyle(
-              fontSize: 32.0,
+              fontSize: 12.0,
               color: Colors.black,
               fontWeight: FontWeight.w400,
             ),
@@ -107,7 +108,9 @@ class _SpeechToTextState extends State<SpeechToText> {
         setState(() => _isListening = true);
         _speech.listen(
           onResult: (val) => setState(() {
-            _text = val.recognizedWords;
+            if (val.recognizedWords.isNotEmpty){
+              _text = val.recognizedWords;
+            }
           }),
         );
       }

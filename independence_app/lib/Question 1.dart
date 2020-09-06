@@ -30,7 +30,7 @@ class MyStatelessWidget extends StatelessWidget {
   String prompt1 =
       'Hello, this is the Independence Application. I am going to ask you a couple of questions about your health.';
   String prompt2 =
-      "Please enter your Name and Medical ID Below so that your EHR can be retreived for today's session.";
+      "Please enter your Name and Medical ID on the next page so that your EHR can be retrieved for today's session.";
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +57,8 @@ class MyStatelessWidget extends StatelessWidget {
           child: Text("LOGIN"),
         ),
         TextToSpeech(
-          text: prompt1 + prompt2,
-        )
+          text: prompt1 + "..." + prompt2, listener: false
+        ),
       ]),
     );
   }

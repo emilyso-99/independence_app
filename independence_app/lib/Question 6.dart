@@ -4,6 +4,7 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
+import 'package:independence_app/texttospeech.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,6 +28,7 @@ final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
 
+  String prompt = 'Can you tell me where you are currently?';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,12 +37,17 @@ class MyStatelessWidget extends StatelessWidget {
         title: const Text('Please answer the following question:'),
         actions: <Widget>[],
       ),
-      body: const Center(
-        child: Text(
-          'Can you tell me where you are currently?',
+      body: new Center(
+        child: new Column(
+          children: [Text(prompt,
           style: TextStyle(fontSize: 30),
+          ), 
+          TextToSpeech(text:
+            prompt, listener: true,
+            )
+          ]
         ),
-      ),
+      )
     );
   }
 }
