@@ -7,18 +7,8 @@ import "globals.dart";
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2250);
 
+  // ignore: missing_return
   Future<String> _authUser(LoginData data) {
-    // print('Name: ${data.name}, Password: ${data.password}');
-    // // this is where to check in Firebase
-    // return Future.delayed(loginTime).then((_) {
-    //   if (!users.containsKey(data.name)) {
-    //     return 'Username not exists';
-    //   }
-    //   if (users[data.name] != data.password) {
-    //     return 'Password does not match';
-    //   }
-    //   return null;
-    // });
     Firestore.instance
         .collection("patient_info")
         .getDocuments()
@@ -27,7 +17,7 @@ class LoginScreen extends StatelessWidget {
         if (result.data["name"] == data.name) {
           GlobalData.medid = result.data["MedID"];
           GlobalData.username = result.data["name"];
-          print(result.data);
+          return null;
         } else {
           Firestore.instance.collection("patient_info").add({
             "name": data.name,
@@ -35,11 +25,10 @@ class LoginScreen extends StatelessWidget {
           });
           GlobalData.username = data.name;
           GlobalData.medid = data.password;
-          print(result.data);
+          return null;
         }
       });
     });
-    return null;
   }
 
   @override
@@ -59,6 +48,7 @@ class LoginScreen extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => QuestionTwo()));
       },
       messages: LoginMessages(usernameHint: "NAME", passwordHint: "MedID"),
+      onRecoverPassword: null,
     );
   }
 }

@@ -4,6 +4,7 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
+import 'package:independence_app/final_script.dart';
 import "package:independence_app/texttospeech.dart";
 import 'package:google_fonts/google_fonts.dart';
 
@@ -41,7 +42,8 @@ class QuestionSeven extends StatelessWidget {
           actions: <Widget>[],
         ),
         body: new Center(
-          child: new Column(children: [
+            child: new Stack(children: [
+          new Column(children: [
             Text(
               prompt,
               style: GoogleFonts.oswald(
@@ -53,6 +55,10 @@ class QuestionSeven extends StatelessWidget {
               listener: true,
             )
           ]),
-        ));
+          GestureDetector(onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => FinalScreen()));
+          })
+        ])));
   }
 }

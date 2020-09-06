@@ -27,9 +27,14 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 
 /// This is the stateless widget that the main application instantiates.
-class QuestionFour extends StatelessWidget {
+class QuestionFour extends StatefulWidget {
   QuestionFour({Key key}) : super(key: key);
 
+  @override
+  _QuestionFourState createState() => _QuestionFourState();
+}
+
+class _QuestionFourState extends State<QuestionFour> {
   String prompt =
       'Have you taken all your prescribed medications and supplements today?';
 
