@@ -118,10 +118,6 @@ class MyStatelessWidget extends StatelessWidget {
                             )
                         ),
                     ),
-
-                    TextToSpeech(
-                        text: prompt1 + "..." + prompt2, listener: false
-                    ),
                 ]),
             )
         );
