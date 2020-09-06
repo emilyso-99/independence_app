@@ -4,7 +4,9 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
+import 'package:independence_app/globals.dart';
 import 'package:independence_app/texttospeech.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      home: MyStatelessWidget(),
+      home: QuestionThree(),
     );
   }
 }
@@ -25,32 +27,40 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 
 /// This is the stateless widget that the main application instantiates.
-class MyStatelessWidget extends StatelessWidget {
-  MyStatelessWidget({Key key}) : super(key: key);
+class QuestionThree extends StatefulWidget {
+  QuestionThree({Key key}) : super(key: key);
 
-  String prompt = "Can you tell me what year it is?";
+  @override
+  _QuestionThreeState createState() => _QuestionThreeState();
+}
+
+class _QuestionThreeState extends State<QuestionThree> {
+  String prompt =
+      'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?';
+
   @override
   Widget build(BuildContext context) {
+    GlobalData.question = 3;
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
         title: const Text('Please answer the following question:'),
         actions: <Widget>[],
       ),
-      body: new Container(
-        padding: EdgeInsets.all(10),
-        child: new Center(
-          child: new Column(
-            children: [Text(prompt,
-            style: TextStyle(fontSize: 30),
-            ), 
-            TextToSpeech(text:
-              prompt, listener: true,
-              )
-            ]
+      body: new Center(
+        child: new Column(children: [
+          Text(
+            prompt,
+            style: GoogleFonts.oswald(
+                textStyle: TextStyle(
+                    color: Colors.black, letterSpacing: .5, fontSize: 30)),
           ),
-        ),
-      )
+          TextToSpeech(
+            text: prompt,
+            listener: true,
+          )
+        ]),
+      ),
     );
   }
 }

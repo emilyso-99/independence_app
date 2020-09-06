@@ -23,6 +23,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^1.1.0
+  cloud_firestore: ^0.13.0+1
   #===============================================
   # start - added dependencies for the workmanager
   #===============================================
@@ -57,7 +58,7 @@ dependencies:
   highlight_text: ^0.7.2
   flutter_tts:
   flutter_login: ^1.0.14
-dev_dependencies:
+  dev_dependencies:
   flutter_test:
     sdk: flutter
 
