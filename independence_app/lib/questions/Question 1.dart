@@ -4,9 +4,8 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
-import 'package:independence_app/texttospeech.dart';
 import '../login.dart';
-
+import 'package:independence_app/texttospeech.dart';
 /// This Widget is the main application widget.
 class QuestionOne extends StatelessWidget {
   static const String _title = 'Flutter Code Sample';
@@ -105,7 +104,6 @@ class MyStatelessWidget extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
             ),
-            TextToSpeech(text: prompt1 + "..." + prompt2, listener: false),
           ]),
         ));
   }
