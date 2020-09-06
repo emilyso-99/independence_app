@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:independence_app/globals.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'package:flutter/material.dart';
@@ -92,11 +93,12 @@ class _SpeechToTextState extends State<SpeechToText> {
                 text: _text,
                 textAlign: TextAlign.center,
                 words: _highlights,
-                textStyle: const TextStyle(
-                  fontSize: 12.0,
+                textStyle: GoogleFonts.oswald(
+                    textStyle: const TextStyle(
+                  fontSize: 30.0,
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
-                ),
+                )),
               ),
             ),
           ),

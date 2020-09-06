@@ -36,7 +36,7 @@ class QuestionSix extends StatefulWidget {
 }
 
 class _QuestionSixState extends State<QuestionSix> {
-  String prompt = 'Can you tell me where you are currently?';
+  String prompt = 'Can you tell me where you are currently?\n';
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,8 @@ class _QuestionSixState extends State<QuestionSix> {
               prompt,
               style: GoogleFonts.oswald(
                   textStyle: TextStyle(
-                      color: Colors.black, letterSpacing: .5, fontSize: 30)),
+                      color: Colors.black, letterSpacing: .5, fontSize: 36)),
+              textAlign: TextAlign.center,
             ),
             TextToSpeech(
               text: prompt,

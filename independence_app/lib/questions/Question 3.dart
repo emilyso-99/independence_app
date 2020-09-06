@@ -36,7 +36,7 @@ class QuestionThree extends StatefulWidget {
 
 class _QuestionThreeState extends State<QuestionThree> {
   String prompt =
-      'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?';
+      'Have you fallen or injured yourself recently? Please check your body for bruises and cuts. Do you have any large bruises or cuts?\n';
 
   @override
   Widget build(BuildContext context) {
@@ -49,12 +49,11 @@ class _QuestionThreeState extends State<QuestionThree> {
       ),
       body: new Center(
         child: new Column(children: [
-          Text(
-            prompt,
-            style: GoogleFonts.oswald(
-                textStyle: TextStyle(
-                    color: Colors.black, letterSpacing: .5, fontSize: 30)),
-          ),
+          Text(prompt,
+              style: GoogleFonts.oswald(
+                  textStyle: TextStyle(
+                      color: Colors.black, letterSpacing: .5, fontSize: 30)),
+              textAlign: TextAlign.center),
           TextToSpeech(
             text: prompt,
             listener: true,

@@ -31,7 +31,7 @@ class QuestionFour extends StatelessWidget {
   QuestionFour({Key key}) : super(key: key);
 
   String prompt =
-      'Have you taken all your prescribed medications and supplements today?';
+      'Have you taken all your prescribed medications and supplements today?\n';
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,8 @@ class QuestionFour extends StatelessWidget {
               prompt,
               style: GoogleFonts.oswald(
                   textStyle: TextStyle(
-                      color: Colors.black, letterSpacing: .5, fontSize: 30)),
+                      color: Colors.black, letterSpacing: .5, fontSize: 36)),
+              textAlign: TextAlign.center,
             ),
             TextToSpeech(
               text: prompt,

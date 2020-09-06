@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:independence_app/final_script.dart';
 import "package:independence_app/texttospeech.dart";
 import 'package:google_fonts/google_fonts.dart';
+import 'package:independence_app/timer_notif.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,7 @@ class QuestionSeven extends StatelessWidget {
   QuestionSeven({Key key}) : super(key: key);
 
   final String prompt =
-      "THank you for taking the time to answer our questions and have a great rest of your day!";
+      "Thank you for taking the time to answer our questions and have a great rest of your day!\n";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,21 +45,25 @@ class QuestionSeven extends StatelessWidget {
         body: new Stack(children: [
           new Center(
             child: new Column(children: [
-              Text(
-                prompt,
-                style: GoogleFonts.oswald(
-                    textStyle: TextStyle(
-                        color: Colors.black, letterSpacing: .5, fontSize: 30)),
-              ),
-              TextToSpeech(
-                text: prompt,
-                listener: true,
-              )
+              Text(prompt,
+                  style: GoogleFonts.oswald(
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          letterSpacing: .5,
+                          fontSize: 36)),
+                  textAlign: TextAlign.center),
+              FlatButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
+                  child: Text("Remind me Tomorrow",
+                      style: TextStyle(fontSize: 30)))
             ]),
           ),
           GestureDetector(onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => FinalScreen()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
           })
         ]));
   }

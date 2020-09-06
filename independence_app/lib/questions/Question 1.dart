@@ -51,9 +51,8 @@ class MyStatelessWidget extends StatelessWidget {
           child: Column(children: [
             Padding(padding: EdgeInsets.all(65)),
             Image(
-              image: AssetImage('independence_app/imgAssets/land.png'),
+              image: AssetImage('imgAssets/land.png'),
             ),
-<<<<<<< HEAD
             Padding(padding: EdgeInsets.all(10)),
             Text(
               'Independence',
@@ -110,87 +109,4 @@ class MyStatelessWidget extends StatelessWidget {
           ]),
         ));
   }
-=======
-            body: Container(
-                decoration: BoxDecoration (
-                    gradient: LinearGradient (
-                        colors: [Colors.white, Color(0xffd6ffef)],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                    )
-                ),
-                padding: EdgeInsets.all(10),
-                child: Column(children: [
-                    Padding(padding: EdgeInsets.all(65)),
-                    Image (
-                        image: AssetImage('imgAssets/land.png'),
-                    ),
-                    Padding(padding: EdgeInsets.all(10)),
-                    Text(
-                        'Independence',
-                        style: TextStyle(fontSize: 30),
-                        textAlign: TextAlign.center,
-                    ),
-                    Padding(padding: EdgeInsets.all(70)),
-                    Row (
-                        children: <Widget>[
-                            Expanded (
-                                flex: 2,
-                                child: Container (
-                                    child: Divider(
-                                        color: Color(0xff5e8075),
-                                        height: 2,
-                                        thickness: 3,
-                                        indent: 12,
-                                        endIndent: 12,
-                                    )
-                                )
-                            ),
-                            Expanded (
-                                flex: 5,
-                                child: Container (
-                                    child: Text(
-                                        'To conduct the checkup',
-                                        style: TextStyle(fontSize: 17),
-                                        textAlign: TextAlign.center,
-                                    )
-                                )
-                            ),
-                            Expanded (
-                                flex: 2,
-                                child: Container (
-                                    child: Divider(
-                                        color: Color(0xff5e8075),
-                                        height: 2,
-                                        thickness: 3,
-                                        indent: 12,
-                                        endIndent: 12,
-                                    )
-                                )
-                            )
-                        ]
-                    ),
-                    ButtonTheme (
-                        minWidth: 220,
-                        height: 40,
-                        child: RaisedButton(
-                            onPressed: () {
-                                Navigator.push(context,
-                                    new MaterialPageRoute(builder: (context) => new LoginScreen()));
-                            },
-                            child: Text(
-                                "LOGIN",
-                                style: TextStyle(fontSize: 20)
-                            ),
-                            color: Color(0xffa9c9c0),
-                            shape: RoundedRectangleBorder (
-                                borderRadius: BorderRadius.circular(20)
-                            )
-                        ),
-                    ),
-                ]),
-            )
-        );
-    }
->>>>>>> 4987baff77198dd02b503a48778f185b09320652
 }

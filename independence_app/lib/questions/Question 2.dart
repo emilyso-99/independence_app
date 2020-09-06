@@ -42,10 +42,11 @@ class MyStatelessWidget extends StatelessWidget {
         body: new Center(
           child: new Column(children: [
             Text(
-              "Are you currently hurt or experiencing new or worse pain?",
+              "Are you currently hurt or experiencing new or worse pain?\n",
               style: GoogleFonts.oswald(
                   textStyle: TextStyle(
-                      color: Colors.black, letterSpacing: .5, fontSize: 30)),
+                      color: Colors.black, letterSpacing: .5, fontSize: 36)),
+              textAlign: TextAlign.center,
             ),
             TextToSpeech(text: prompt, listener: true),
           ]),

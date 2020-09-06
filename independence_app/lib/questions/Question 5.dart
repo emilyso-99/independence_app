@@ -36,7 +36,7 @@ class QuestionFive extends StatefulWidget {
 }
 
 class _QuestionFiveState extends State<QuestionFive> {
-  String prompt = "Can you tell me what year it is?";
+  String prompt = "Can you tell me what year it is?\n";
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,8 @@ class _QuestionFiveState extends State<QuestionFive> {
             prompt,
             style: GoogleFonts.oswald(
                 textStyle: TextStyle(
-                    color: Colors.black, letterSpacing: .5, fontSize: 30)),
+                    color: Colors.black, letterSpacing: .5, fontSize: 36)),
+            textAlign: TextAlign.center,
           ),
           TextToSpeech(
             text: prompt,
