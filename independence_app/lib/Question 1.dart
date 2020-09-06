@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:independence_app/texttospeech.dart';
 import 'login.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 /// This Widget is the main application widget.
 class QuestionOne extends StatelessWidget {

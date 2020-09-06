@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
           GlobalData.username = result.data["name"];
           print(result.data);
         } else {
-          Firestore.instance.collection("patient_data").add({
+          Firestore.instance.collection("patient_info").add({
             "name": data.name,
             "MedID": data.password,
           });
