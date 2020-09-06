@@ -1,0 +1,20 @@
+Q1,Q2,Q3,Q4,Q5,Q6,result
+"my head hurts","no","yes","2020","at home",5,3
+"no","no","yes","","",2,4
+"no","no","i don't have medications","2020","at home",8,0
+"my pain got worse","i fell down the stairs","no","2020","my house",6,4
+"my knees hurt","i have knee bruises","no","2020","in the park",6,3
+"my feet hurt","no","yes","i don't know","",3,4
+"yes, "i fell when i walked","yes","no","",2,3.5
+"no","i have a few cuts on my calf","yes","i think 2020","at home",5,3.5
+"my fingers hurt unexpectedly","no but my fingers seems to be infected","yes","2020","not sure",7,2.5
+"i'm feeling pain when i speak","no","not all","2020","on my bed",5,2.5
+"i'm not sure","a few bruises or else i don't remember","yes","","",3,4.5
+"light pain","i've fallen","no i don't have medications","2020","my son's house",4,2
+"very heavy pain","i fell yesterday","yes","2015","in the hospital",1,5
+"i feel quite dizzy","i fell on my head","no","2019","in the streets",2,4.5
+"it's quite painful","my butt and chest hurt","yes","2020","at home",9,2
+"yes a bit","very light headache","yes","2020","at home",8,0.5
+"not really","my feet are numb","yes","i'm not sure","",5,3.5
+"i can't get off my bed","i fell off my bike","yes","2020","in a park",7,3
+"lightly","i think i slightly injured my back","no","2020","at home",8,1.5
