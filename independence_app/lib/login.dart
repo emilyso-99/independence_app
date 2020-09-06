@@ -4,11 +4,6 @@ import 'package:flutter_login/flutter_login.dart';
 import 'questions/Question 2.dart';
 import "globals.dart";
 
-const users = const {
-  'dribbble@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
-};
-
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2250);
 
@@ -32,28 +27,17 @@ class LoginScreen extends StatelessWidget {
         if (result.data["name"] == data.name) {
           GlobalData.medid = result.data["MedID"];
           GlobalData.username = result.data["name"];
-          print(result.data);
-        } else {
-          Firestore.instance.collection("patient_info").add({
-            "name": data.name,
-            "MedID": data.password,
-          });
-          GlobalData.username = data.name;
-          GlobalData.medid = data.password;
-          print(result.data);
+          return null;
         }
       });
-    });
-    return null;
-  }
-
-  Future<String> _recoverPassword(String name) {
-    print('Name: $name');
-    return Future.delayed(loginTime).then((_) {
-      if (!users.containsKey(name)) {
-        return 'Username not exists';
+      {
+        Firestore.instance.collection("patient_info").add({
+          "name": data.name,
+          "MedID": data.password,
+        });
+        GlobalData.username = data.name;
+        GlobalData.medid = data.password;
       }
-      return null;
     });
   }
 
@@ -62,18 +46,12 @@ class LoginScreen extends StatelessWidget {
     return FlutterLogin(
       title: 'INDEPENDENCE',
       logo: 'assets/images/ecorp-lightblue.png',
-      onLogin: _authUser
-      // onLogin: (_) => Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => QuestionTwo())),
-      ,
+      onLogin: _authUser,
       onSignup: _authUser,
-      // onSignup: (_) => Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => QuestionTwo())),
       onSubmitAnimationCompleted: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionTwo()));
       },
-      onRecoverPassword: _recoverPassword,
       messages: LoginMessages(usernameHint: "NAME", passwordHint: "MedID"),
     );
   }
