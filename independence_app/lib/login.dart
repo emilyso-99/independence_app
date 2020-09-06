@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
-import 'package:independence_app/Question 2.dart';
+import 'questions/Question 2.dart';
 import "globals.dart";
 
 const users = const {
