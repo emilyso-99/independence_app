@@ -22,6 +22,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  google_fonts: ^1.1.0
   #===============================================
   # start - added dependencies for the workmanager
   #===============================================
