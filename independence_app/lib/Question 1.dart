@@ -6,6 +6,8 @@
 import 'package:flutter/material.dart';
 import 'package:independence_app/texttospeech.dart';
 import 'login.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 /// This Widget is the main application widget.
 class QuestionOne extends StatelessWidget {
@@ -30,7 +32,7 @@ class MyStatelessWidget extends StatelessWidget {
   String prompt1 =
       'Hello, this is the Independence Application. I am going to ask you a couple of questions about your health.';
   String prompt2 =
-      "Please enter your Name and Medical ID on the next page so that your EHR can be retrieved for today's session.";
+      "Please enter your Name and Medical ID Below so that your EHR can be retreived for today's session.";
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +43,15 @@ class MyStatelessWidget extends StatelessWidget {
         actions: <Widget>[],
       ),
       body: Column(children: [
-        Text(
-          prompt1,
-          style: TextStyle(fontSize: 30),
-        ),
+        Text(prompt1,
+            style: GoogleFonts.oswald(
+                textStyle: TextStyle(
+                    color: Colors.black, letterSpacing: .5, fontSize: 30))),
         Text(
           prompt2,
-          style: TextStyle(fontSize: 30),
+          style: GoogleFonts.oswald(
+              textStyle: TextStyle(
+                  color: Colors.black, letterSpacing: .5, fontSize: 30)),
         ),
         RaisedButton(
           onPressed: () {
@@ -57,8 +61,8 @@ class MyStatelessWidget extends StatelessWidget {
           child: Text("LOGIN"),
         ),
         TextToSpeech(
-          text: prompt1 + "..." + prompt2, listener: false
-        ),
+          text: prompt1 + prompt2,
+        )
       ]),
     );
   }

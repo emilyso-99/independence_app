@@ -79,12 +79,12 @@ class _SpeechToTextState extends State<SpeechToText> {
         ),
       ),
       body: SingleChildScrollView(
-        
         reverse: true,
+        
         child: Container(
-          padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 50.0),
           child: TextHighlight(
             text: _text,
+            textAlign: TextAlign.center,
             words: _highlights,
             textStyle: const TextStyle(
               fontSize: 12.0,

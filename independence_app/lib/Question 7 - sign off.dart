@@ -5,6 +5,7 @@
 
 import 'package:flutter/material.dart';
 import "package:independence_app/texttospeech.dart";
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,26 +29,29 @@ final SnackBar snackBar = const SnackBar(content: Text('Showing Snackbar'));
 class MyStatelessWidget extends StatelessWidget {
   MyStatelessWidget({Key key}) : super(key: key);
 
-  String prompt = "THank you for taking the time to answer our questions and have a great rest of your day!";
+  String prompt =
+      "THank you for taking the time to answer our questions and have a great rest of your day!";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      appBar: AppBar(
-        title: const Text('Please answer the following question:'),
-        actions: <Widget>[],
-      ),
-      body: new Center(
-        child: new Column(
-          children: [Text(prompt,
-          style: TextStyle(fontSize: 30),
-          ), 
-          TextToSpeech(text:
-            prompt, listener: true,
-            )
-          ]
+        key: scaffoldKey,
+        appBar: AppBar(
+          title: const Text('Please answer the following question:'),
+          actions: <Widget>[],
         ),
-      )
-    );
+        body: new Center(
+          child: new Column(children: [
+            Text(
+              prompt,
+              style: GoogleFonts.oswald(
+                  textStyle: TextStyle(
+                      color: Colors.black, letterSpacing: .5, fontSize: 30)),
+            ),
+            TextToSpeech(
+              text: prompt,
+              listener: true,
+            )
+          ]),
+        ));
   }
 }
