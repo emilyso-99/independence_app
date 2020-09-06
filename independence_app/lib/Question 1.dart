@@ -60,7 +60,7 @@ class MyStatelessWidget extends StatelessWidget {
           child: Text("LOGIN"),
         ),
         TextToSpeech(
-          text: prompt1 + prompt2,
+          text: prompt1 + prompt2, listener: false
         )
       ]),
     );
