@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 
 #get the data
-df = pd.read_csv('../independence_app_answers.csv')
+df = pd.read_csv('independence_app_answers.csv')
 
 #filter data
 #possible words about negative conditions
