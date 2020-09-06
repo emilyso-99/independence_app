@@ -4,4 +4,5 @@ class GlobalData {
   static var username;
   static var medid;
   static BuildContext context;
+  static int question;
 }

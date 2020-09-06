@@ -8,6 +8,7 @@ import 'questions/Question 4.dart';
 import 'questions/Question 5.dart';
 import 'questions/Question 6.dart';
 import 'questions/Question 7 - sign off.dart';
+import 'globals.dart';
 
 class SpeechToText extends StatefulWidget {
   @override
@@ -124,20 +125,16 @@ class _SpeechToTextState extends State<SpeechToText> {
       if (GlobalData.question == 2) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionThree()));
-      }
-      if (GlobalData.question == 3) {
+      } else if (GlobalData.question == 3) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionFour()));
-      }
-      if (GlobalData.question == 4) {
+      } else if (GlobalData.question == 4) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionFive()));
-      }
-      if (GlobalData.question == 5) {
+      } else if (GlobalData.question == 5) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionSix()));
-      }
-      if (GlobalData.question == 6) {
+      } else if (GlobalData.question == 6) {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionSeven()));
       }
