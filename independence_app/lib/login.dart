@@ -36,13 +36,8 @@ class LoginScreen extends StatelessWidget {
     return FlutterLogin(
       title: 'INDEPENDENCE',
       logo: 'assets/images/ecorp-lightblue.png',
-      onLogin: _authUser
-      // onLogin: (_) => Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => QuestionTwo())),
-      ,
+      onLogin: _authUser,
       onSignup: _authUser,
-      // onSignup: (_) => Navigator.push(
-      //     context, MaterialPageRoute(builder: (context) => QuestionTwo())),
       onSubmitAnimationCompleted: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionTwo()));

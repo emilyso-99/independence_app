@@ -5,8 +5,6 @@ import "globals.dart";
 class FinalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var contact;
-    var number;
     Firestore.instance
         .collection("contact_info")
         .getDocuments()
@@ -14,9 +12,37 @@ class FinalScreen extends StatelessWidget {
       querySnapshot.documents.forEach((result) {
         print(GlobalData.username);
         if (result.data["name"] == GlobalData.username) {
-          contact = result.data["contact"];
-          number = result.data["phone"];
           print(result.data["contact"]);
+          print(result.data["number"]);
+          GlobalData.contact = result.data["contact"];
+          GlobalData.number = result.data["phone"];
+          print(result.data["contact"]);
+          return new Scaffold(
+              body: SingleChildScrollView(
+                  child: Column(
+            children: [
+              Text("\n\nContact:\n", textAlign: TextAlign.center),
+              Text(result.data["contact"], textAlign: TextAlign.center),
+              Text("Number:\n", textAlign: TextAlign.center),
+              Text(result.data["number"], textAlign: TextAlign.center),
+              Text("Question 1", textAlign: TextAlign.center),
+              Text(GlobalData.Question2, textAlign: TextAlign.center),
+              Text("Question 2", textAlign: TextAlign.center),
+              Text(GlobalData.Question3, textAlign: TextAlign.center),
+              Text("Question3", textAlign: TextAlign.center),
+              Text(
+                GlobalData.Question4,
+                textAlign: TextAlign.center,
+              ),
+              Text("Question 4", textAlign: TextAlign.center),
+              Text(GlobalData.Question5, textAlign: TextAlign.center),
+              Text(
+                "Question 5",
+                textAlign: TextAlign.center,
+              ),
+              Text(GlobalData.Question6, textAlign: TextAlign.center)
+            ],
+          )));
         }
       });
     });
@@ -24,10 +50,10 @@ class FinalScreen extends StatelessWidget {
         body: SingleChildScrollView(
             child: Column(
       children: [
-        Text('We are sending this script to your contact' +
-            contact +
-            ', at' +
-            number),
+        Text("\n\nContact:\n", textAlign: TextAlign.center),
+        Text(GlobalData.contact, textAlign: TextAlign.center),
+        Text("Number:\n", textAlign: TextAlign.center),
+        Text(GlobalData.number, textAlign: TextAlign.center),
         Text("Question 1", textAlign: TextAlign.center),
         Text(GlobalData.Question2, textAlign: TextAlign.center),
         Text("Question 2", textAlign: TextAlign.center),

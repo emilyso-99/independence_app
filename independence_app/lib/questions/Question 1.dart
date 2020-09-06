@@ -53,7 +53,7 @@ class MyStatelessWidget extends StatelessWidget {
                 child: Column(children: [
                     Padding(padding: EdgeInsets.all(65)),
                     Image (
-                        image: AssetImage('assets/land.png'),
+                        image: AssetImage('imgAssets/land.png'),
                     ),
                     Padding(padding: EdgeInsets.all(10)),
                     Text(

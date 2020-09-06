@@ -14,4 +14,6 @@ class GlobalData {
   static var Question5 = "I don't know what year it is";
   static var Question6 =
       "I'm at home right now, I don't like to go out because I'm afraid that I will fall";
+  static var contact = "No Contact";
+  static var number = "No Number";
 }
