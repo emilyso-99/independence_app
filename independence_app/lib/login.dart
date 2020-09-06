@@ -4,11 +4,6 @@ import 'package:flutter_login/flutter_login.dart';
 import 'questions/Question 2.dart';
 import "globals.dart";
 
-const users = const {
-  'dribbble@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
-};
-
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2250);
 
@@ -47,16 +42,6 @@ class LoginScreen extends StatelessWidget {
     return null;
   }
 
-  Future<String> _recoverPassword(String name) {
-    print('Name: $name');
-    return Future.delayed(loginTime).then((_) {
-      if (!users.containsKey(name)) {
-        return 'Username not exists';
-      }
-      return null;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
@@ -73,7 +58,6 @@ class LoginScreen extends StatelessWidget {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => QuestionTwo()));
       },
-      onRecoverPassword: _recoverPassword,
       messages: LoginMessages(usernameHint: "NAME", passwordHint: "MedID"),
     );
   }
