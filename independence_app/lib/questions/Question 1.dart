@@ -4,7 +4,6 @@
 // opens a [SnackBar], while the second action navigates to a new page.
 
 import 'package:flutter/material.dart';
-import 'package:independence_app/texttospeech.dart';
 import '../login.dart';
 
 /// This Widget is the main application widget.
